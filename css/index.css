@@ -1,0 +1,89 @@
+html, body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+.tituloPagina{
+    font-size: 90px;
+    color: #000;
+    font-family: 'Anton', sans-serif;
+    padding:0 10px 0 10px;
+    border: 3px solid #000;
+    animation: tituloPagina 2s;
+}
+@keyframes tituloPagina{
+    0%{
+    transform: translate(-500% , 0);
+    }
+    100%{
+    transform: translate(0 , 0);
+    }
+}
+.divTitulo{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #47d1d1;
+    z-index: 2;
+
+}
+.estatisticasText{
+    font-size: 40px;
+    color: #000;
+    font-family: 'Acme', sans-serif;
+    padding: 20px;
+    border-bottom: 15px solid #47d1d1;
+    border-left: 15px solid #47d1d1;
+    border-right: 15px solid #47d1d1;
+    border-radius: 50%;
+}
+.divEstatic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textoInfos{
+    font-size: 40px;
+    font-family: 'Comic Neue', cursive;
+    color: black;
+}
+.textoSobreCorona{
+    font-size: 16px;
+}
+.hr{
+    border: 0;
+    height: 4px;
+    background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+}
+.imgBanner1{
+    position: absolute;
+    width: 150px;
+    left: 1%;
+    top: 65px;
+    z-index: 1;
+
+}
+.imgBanner2{
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    top: 525px;
+    z-index: 1;
+}
+.imgBanner3{
+    position: absolute;
+    right: 3%;
+    width: 150px;
+    top: 200px;
+    z-index: 1;
+
+}
+.imgBanner4{
+    position: absolute;
+    right: 55%;
+    width: 150px;
+    top: 450px;
+    z-index: 1;
+
+}

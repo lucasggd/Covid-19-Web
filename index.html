@@ -1,0 +1,222 @@
+<html lang="pt-br">
+
+<head>
+    <title>Covid 19 Informações</title>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/index.css">
+
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Comic+Neue&display=swap" rel="stylesheet">
+
+<body>
+    <script>
+        fetch('https://coronavirus-19-api.herokuapp.com/countries/brazil')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var casos = data.cases;
+                var mortes = data.deaths;
+                var curados = data.recovered;
+
+                var numCasos = document.getElementById("numCasos");
+                numCasos.innerText = casos;
+
+                var numMortes = document.getElementById("numMortes");
+                numMortes.innerText = mortes;
+
+                var numCurados = document.getElementById("numCurados");
+                numCurados.innerText = curados;
+            })
+
+            fetch('https://coronavirus-19-api.herokuapp.com/all')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var casos = data.cases;
+                var mortes = data.deaths;
+                var curados = data.recovered;
+
+                var numCasos = document.getElementById("numCasosGlobal");
+                numCasos.innerText = casos;
+
+                var numMortes = document.getElementById("numMortesGlobal");
+                numMortes.innerText = mortes;
+
+                var numCurados = document.getElementById("numCuradosGlobal");
+                numCurados.innerText = curados;
+            })
+    </script>
+
+    <div class="divTitulo">
+        <p class="tituloPagina">COVID-19</p>
+        <img src="img/molecula.png" class="imgBanner1">
+        <img src="img/molecula.png" class="imgBanner2">
+        <img src="img/molecula.png" class="imgBanner3">
+        <img src="img/molecula.png" class="imgBanner4">
+
+    </div>
+
+    <div class="container" style="margin-top: 150px; margin-bottom: 150px;">
+        <h1 style="text-align: center;">Casos no Brasil em tempo real</h1>
+        <div class="divNumInfo row">
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numCasos" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Casos Confirmados</p>
+            </div>
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numMortes" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Mortes</p>
+            </div>
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numCurados" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Pessoas Curadas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="text-align: center;">O que é Coronavírus?</h1>
+        <p class="textoSobreCorona" style="margin-top: 40px;">Coronavírus (CID10) é uma família de vírus que causam
+            infecções respiratórias. O novo agente do coronavírus foi <b>descoberto em 31/12/19</b> após casos
+            registrados na China. Provoca a doença chamada de coronavírus (<b>COVID-19</b>).</p>
+        <p class="textoSobreCorona">Os primeiros coronavírus humanos foram isolados pela primeira vez em 1937. No
+            entanto, foi em 1965 que o vírus foi descrito como coronavírus, em decorrência do perfil na microscopia,
+            parecendo uma coroa. </p>
+        <p class="textoSobreCorona">A maioria das pessoas se infecta com os coronavírus comuns ao longo da vida, sendo
+            as crianças pequenas mais propensas a se infectarem com o tipo mais comum do vírus. Os coronavírus mais
+            comuns que infectam humanos são o alpha coronavírus 229E e NL63 e beta coronavírus OC43, HKU1. </p>
+    </div>
+    <hr class="hr">
+
+    <div class="container" style="margin-top: 100px;">
+        <h1 style="text-align: center;">Quais são os sintomas do Coronavírus?</h1>
+        <p class="textoSobreCorona" style="margin-top: 40px;">Os sinais e sintomas do coronavírus são principalmente
+            respiratórios, semelhantes a um resfriado. Podem, também, causar infecção do trato respiratório inferior,
+            como as pneumonias. No entanto, o coronavírus (SARS-CoV-2) ainda precisa de mais estudos e investigações
+            para caracterizar melhor os sinais e sintomas da doença. </p>
+        <p class="textoSobreCorona">Os principais são sintomas conhecidos até o momento são:</p>
+        <ul>
+            <li>Febre</li>
+            <li>Tosse</li>
+            <li>Dificuldade para respirar</li>
+        </ul>
+    </div>
+    <hr class="hr">
+
+    <div class="container" style="margin-top: 100px;">
+        <h1 style="text-align: center;">Como o coronavírus é transmitido?</h1>
+        <p class="textoSobreCorona" style="margin-top: 40px;">As investigações sobre as formas de transmissão do
+            coronavírus ainda estão em andamento, mas a disseminação de pessoa para pessoa, ou seja, a contaminação por
+            gotículas respiratórias ou contato, está ocorrendo.</p>
+        <p class="textoSobreCorona">Qualquer pessoa que tenha contato próximo (cerca de 1m) com alguém com sintomas
+            respiratórios está em risco de ser exposta à infecção.</p>
+        <p class="textoSobreCorona">É importante observar que a disseminação de pessoa para pessoa pode ocorrer de forma
+            continuada.</p>
+        <p class="textoSobreCorona">Alguns vírus são altamente contagiosos (como sarampo), enquanto outros são menos.
+            Ainda não está claro com que facilidade o coronavírus se espalha de pessoa para pessoa.</p>
+        <p class="textoSobreCorona">Apesar disso, a transmissão dos coronavírus costuma ocorrer pelo ar ou por contato
+            pessoal com secreções contaminadas, como:</p>
+
+        <ul>
+            <li>gotículas de saliva;</li>
+            <li>espirro;</li>
+            <li>tosse;</li>
+            <li>catarro;</li>
+            <li>contato pessoal próximo, como toque ou aperto de mão;</li>
+            <li>contato com objetos ou superfícies contaminadas, seguido de contato com a boca, nariz ou olhos.</li>
+        </ul>
+
+        <p class="textoSobreCorona">Os coronavírus apresentam uma transmissão menos intensa que o vírus da gripe.</p>
+        <p class="textoSobreCorona">O período médio de incubação por coronavírus é de <b>5 dias</b>, com intervalos que
+            chegam a <b>12 dias</b>, período em que os primeiros sintomas levam para aparecer desde a infecção.</p>
+        <p class="textoSobreCorona">A transmissibilidade dos pacientes infectados por SARSCoV é em média de <b>7 dias
+                após o início dos sintomas</b>. No entanto, dados preliminares do coronavírus (SARS-CoV-2) sugerem que a
+            <b>transmissão possa ocorrer mesmo sem o aparecimento de sinais e sintomas</b>.</p>
+        <p class="textoSobreCorona">Até o momento, não há informaçõesção suficientes de quantos dias anteriores ao
+            início dos sinais e sintomas uma pessoa infectada passa a transmitir o vírus.</p>
+    </div>
+    <hr class="hr">
+
+    <div class="container" style="margin-top: 100px;">
+        <h1 style="text-align: center;">Como prevenir o Coronavírus?</h1>
+        <p class="textoSobreCorona" style="margin-top: 40px;">O Ministério da Saúde orienta cuidados básicos para
+            reduzir o risco geral de contrair ou transmitir infecções respiratórias agudas, incluindo o coronavírus.
+            Entre as medidas estão:</p>
+        <ul>
+            <li>Lavar as mãos frequentemente com água e sabonete por pelo menos 20 segundos, respeitando os 5 momentos
+                de higienização. Se não houver água e sabonete, usar um desinfetante para as mãos à base de álcool.</li>
+            <li>Evitar tocar nos olhos, nariz e boca com as mãos não lavadas.</li>
+            <li>Evitar contato próximo com pessoas doentes.</li>
+            <li>Ficar em casa quando estiver doente.</li>
+            <li>Cobrir boca e nariz ao tossir ou espirrar com um lenço de papel e jogar no lixo.</li>
+            <li>Limpar e desinfetar objetos e superfícies tocados com freqüência.</li>
+        </ul>
+    </div>
+
+    <div class="container" style="margin-top: 150px; margin-bottom: 150px;">
+        <h1 style="text-align: center;">Casos no MUNDO em tempo real</h1>
+        <div class="divNumInfo row">
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numCasosGlobal" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Casos Confirmados</p>
+            </div>
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numMortesGlobal" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Mortes</p>
+            </div>
+            <div class="col-12 col-lg-4" style="margin-top: 100px;">
+                <div class="divEstatic">
+                    <p id="numCuradosGlobal" class="estatisticasText"></p>
+                </div>
+                <p class="textoInfos" style="text-align: center;">Pessoas Curadas</p>
+            </div>
+        </div>
+    </div>
+    
+    <p class="container">fonte: <a
+            href="https://www.saude.gov.br/o-ministro/746-saude-de-a-a-z/46490-novo-coronavirus-o-que-e-causas-sintomas-tratamento-e-prevencao-3">https://www.saude.gov.br/o-ministro/746-saude-de-a-a-z/46490-novo-coronavirus-o-que-e-causas-sintomas-tratamento-e-prevencao-3</a>
+    </p>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small" style="background-color: #3399ff; margin-top: 150px;">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright</div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
