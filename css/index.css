@@ -34,8 +34,6 @@ html, body{
     width: 100%;
     position: absolute;
     object-fit: cover; 
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
 }
 .estatisticasText{
     font-size: 40px;
